@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>spring mvc</title>
+    <style>
+        TABLE {
+        /*table th, table td*/
+        width: 50%; /* Ширина таблицы */
+        border-collapse: collapse; /* Отображать только одинарные линии */
+        }
+        th {
+            text-align: left; /* Выравнивание по левому краю */
+            background: #ccc; /* Цвет фона ячеек */
+            padding: 4px; /* Поля вокруг содержимого ячеек */
+            border: 1px solid black; /* Граница вокруг ячеек */
+        }
+        td {
+            padding: 4px; /* Поля вокруг содержимого ячеек */
+            border: 1px solid black; /* Граница вокруг ячеек */
+        }
+
+    </style>
+</head>
+<body>
+<h1>Cars</h1>
+<table>
+    <tr>
+        <th>Year</th>
+        <th>Model</th>
+        <th>Series</th>
+    </tr>
+    <tr th:each="car,state:${cars}">
+        <td th:utext="${car.age}">age</td>
+        <td th:utext="${car.model}">Model</td>
+        <td th:utext="${car.series}">Series</td>
+    </tr>
+</table>
+
+</body>
+</html>
